@@ -1,5 +1,4 @@
 package gptresponse;
-
 import java.util.List;
 
 public record ChatResponse(List<Output> output,

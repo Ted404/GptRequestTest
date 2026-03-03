@@ -1,5 +1,10 @@
 package clientrequest;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import gptresponse.ChatResponse;
+import gptresponse.GptResponse;
+import gptresponse.ResponseMapper;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -37,7 +42,10 @@ public class PostRequest {
         HttpResponse<String> response = client.send(httpRequest, HttpResponse.BodyHandlers.ofString());
        // if (response.statusCode() != 200) {
             //System.out.println("Error: " + response.body());
-        //}
+
+        ObjectMapper mapper = new ObjectMapper();
+        ChatResponse gptResponse = mapper.readValue(response.body(), GptResponse.class);
+        GptResponse.SimpleResponse simple = ResponseMapper.toSimple();
         return response.body();
     }
 }
