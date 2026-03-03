@@ -43,6 +43,8 @@ public class PostRequest {
        // if (response.statusCode() != 200) {
             //System.out.println("Error: " + response.body());
 
+
+        ///  broken part - will need to fix this part along with the other classes
         ObjectMapper mapper = new ObjectMapper();
         ChatResponse gptResponse = mapper.readValue(response.body(), GptResponse.class);
         GptResponse.SimpleResponse simple = ResponseMapper.toSimple();
