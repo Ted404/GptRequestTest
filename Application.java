@@ -18,7 +18,6 @@ public class Application {
                 break;
             }
             String response = postRequest.postRequest(input);
-
             System.out.println("Response: " + response);
         }
     }
