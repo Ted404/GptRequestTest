@@ -1,4 +1,5 @@
 import clientrequest.PostRequest;
+import gptresponse.SimpleResponse;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -11,14 +12,16 @@ public class Application {
         PostRequest postRequest = new PostRequest();
 
         while (true){
-            System.out.println("Request: ");
+            System.out.print("Ask me: ");
             String input = scanner.nextLine();
 
             if(input.equalsIgnoreCase("exit")){
                 break;
             }
-            String response = postRequest.postRequest(input);
-            System.out.println("Response: " + response);
+            SimpleResponse response = postRequest.postRequest(input);
+            System.out.println("Response: " + response.message());
+            System.out.println("Tokens Used: " + response.token());
+
         }
     }
 }

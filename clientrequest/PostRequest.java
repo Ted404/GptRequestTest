@@ -1,8 +1,8 @@
 package clientrequest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import gptresponse.ChatResponse;
-import gptresponse.GptResponse;
+import gptresponse.ApiResponse;
+import gptresponse.SimpleResponse;
 import gptresponse.ResponseMapper;
 
 import java.io.IOException;
@@ -15,6 +15,7 @@ public class PostRequest {
 
     private final String API_KEY = System.getenv("API_KEY");
     private final HttpClient client;
+    private final ObjectMapper mapper = new ObjectMapper();
 
     public PostRequest(){
         client = HttpClient.newHttpClient();
@@ -23,7 +24,7 @@ public class PostRequest {
         }
     }
 
-    public String postRequest(String userInput) throws IOException, InterruptedException{
+    public SimpleResponse postRequest(String userInput) throws IOException, InterruptedException{
 
         String jsonBody = """
                 {
@@ -39,15 +40,20 @@ public class PostRequest {
                 .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
                 .build();
 
-        HttpResponse<String> response = client.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+        HttpResponse<String> response = client.send(
+                httpRequest,
+                HttpResponse.BodyHandlers.ofString());
        // if (response.statusCode() != 200) {
             //System.out.println("Error: " + response.body());
-
+        if(response.statusCode() != 200){
+            throw new RuntimeException(
+                    "API Error: " + response.body()
+            );
+        }
 
         ///  broken part - will need to fix this part along with the other classes
-        ObjectMapper mapper = new ObjectMapper();
-        ChatResponse gptResponse = mapper.readValue(response.body(), GptResponse.class);
-        GptResponse.SimpleResponse simple = ResponseMapper.toSimple();
-        return response.body();
+        ApiResponse apiResponse = mapper.readValue(response.body(), ApiResponse.class);
+
+        return ResponseMapper.toSimple(apiResponse);
     }
 }
