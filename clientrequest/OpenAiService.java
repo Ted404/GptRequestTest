@@ -11,20 +11,20 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class PostRequest {
+public class OpenAiService {
 
     private final String API_KEY = System.getenv("API_KEY");
     private final HttpClient client;
     private final ObjectMapper mapper = new ObjectMapper();
 
-    public PostRequest(){
+    public OpenAiService(){
         client = HttpClient.newHttpClient();
         if(API_KEY == null){
             throw new IllegalStateException("OPENAI_API_KEY environment variable not set.");
         }
     }
 
-    public SimpleResponse postRequest(String userInput) throws IOException, InterruptedException{
+    public SimpleResponse ask(String userInput) throws IOException, InterruptedException{
 
         String jsonBody = """
                 {
@@ -43,11 +43,10 @@ public class PostRequest {
         HttpResponse<String> response = client.send(
                 httpRequest,
                 HttpResponse.BodyHandlers.ofString());
-       // if (response.statusCode() != 200) {
-            //System.out.println("Error: " + response.body());
+
         if(response.statusCode() != 200){
             throw new RuntimeException(
-                    "API Error: " + response.body()
+                    "OpenAI API error (" + response.statusCode() + "): " + response.body()
             );
         }
 

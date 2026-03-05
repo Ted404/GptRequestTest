@@ -21,4 +21,5 @@ public record ApiResponse(List<Output> output,
             int output_tokens,
             int total_tokens
     ){}
+
 }
