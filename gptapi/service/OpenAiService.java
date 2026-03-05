@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import gptapi.dto.ApiResponse;
 import gptapi.dto.SimpleResponse;
 import gptapi.dto.ResponseMapper;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.IOException;
 import java.net.URI;
@@ -12,8 +13,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class OpenAiService {
-
-    private final String API_KEY = System.getenv("API_KEY");
+    @Value("${OPENAI_API_KEY}")
+    private String API_KEY;
     private final HttpClient client;
     private final ObjectMapper mapper = new ObjectMapper();
 
