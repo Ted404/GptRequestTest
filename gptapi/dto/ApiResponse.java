@@ -1,4 +1,4 @@
-package gptresponse;
+package gptapi.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;

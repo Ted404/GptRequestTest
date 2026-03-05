@@ -1,9 +1,9 @@
-package clientrequest;
+package gptapi.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import gptresponse.ApiResponse;
-import gptresponse.SimpleResponse;
-import gptresponse.ResponseMapper;
+import gptapi.dto.ApiResponse;
+import gptapi.dto.SimpleResponse;
+import gptapi.dto.ResponseMapper;
 
 import java.io.IOException;
 import java.net.URI;

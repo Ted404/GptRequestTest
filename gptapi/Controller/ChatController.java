@@ -1,7 +1,7 @@
-package Controller;
+package gptapi.Controller;
 
-import clientrequest.OpenAiService;
-import gptresponse.SimpleResponse;
+import gptapi.service.OpenAiService;
+import gptapi.dto.SimpleResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

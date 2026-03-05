@@ -1,4 +1,4 @@
-package gptresponse;
+package gptapi.dto;
 
 public class ResponseMapper {
 
