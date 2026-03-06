@@ -5,6 +5,7 @@ import gptapi.dto.ApiResponse;
 import gptapi.dto.SimpleResponse;
 import gptapi.dto.ResponseMapper;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.net.URI;
@@ -12,17 +13,17 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+@Service
 public class OpenAiService {
-    @Value("${OPENAI_API_KEY}")
-    private String API_KEY;
+
+    @Value("${openai.api.key}")
+    private String apikey;
+
     private final HttpClient client;
     private final ObjectMapper mapper = new ObjectMapper();
 
     public OpenAiService(){
         client = HttpClient.newHttpClient();
-        if(API_KEY == null){
-            throw new IllegalStateException("OPENAI_API_KEY environment variable not set.");
-        }
     }
 
     public SimpleResponse ask(String userInput) throws IOException, InterruptedException{
@@ -37,7 +38,7 @@ public class OpenAiService {
         HttpRequest httpRequest = HttpRequest.newBuilder()
                 .uri(URI.create("https://api.openai.com/v1/responses"))
                 .header("Content-Type", "application/json")
-                .header("Authorization", "Bearer " + API_KEY)
+                .header("Authorization", "Bearer " + apikey)
                 .POST(HttpRequest.BodyPublishers.ofString(jsonBody))
                 .build();
 
@@ -51,7 +52,6 @@ public class OpenAiService {
             );
         }
 
-        ///  broken part - will need to fix this part along with the other classes
         ApiResponse apiResponse = mapper.readValue(response.body(), ApiResponse.class);
 
         return ResponseMapper.toSimple(apiResponse);
