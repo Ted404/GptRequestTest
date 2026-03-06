@@ -1,0 +1,46 @@
+
+
+body{
+    background-color: gray;
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+        width: 500px;
+        padding: 8px;
+    }
+
+/* top */
+#header_element{
+    text-align: center;
+    padding: 50px;
+    color: lightcyan;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+/*middle */
+#response{
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*bottom*/
+#ask_bar{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    gap: 10px;
+}
+
+
+
