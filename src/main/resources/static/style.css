@@ -28,8 +28,44 @@ input {
     flex: 1;
     overflow-y: auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.message {
+    max-width: min(760px, 92%);
+    padding: 12px 14px;
+    border-radius: 12px;
+    line-height: 1.45;
+    white-space: pre-wrap;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.message.user {
+    margin-left: auto;
+    background: #193155;
+    color: #f4f8ff;
+}
+
+.message.assistant {
+    margin-right: auto;
+    background: #e8eef5;
+    color: #1b2738;
+}
+
+.message.error {
+    margin-right: auto;
+    background: #ffdfe0;
+    color: #601b20;
+}
+
+.meta {
+    margin-top: 6px;
+    font-size: 12px;
+    opacity: 0.8;
 }
 
 
@@ -41,6 +77,5 @@ input {
     padding: 15px;
     gap: 10px;
 }
-
 
 
