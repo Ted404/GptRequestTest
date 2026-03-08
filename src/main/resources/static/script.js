@@ -13,10 +13,16 @@ async function ask() {
             body: question
         });
 
-        const raw = await res.text();
-        console.log("RAW RESPONSE:", raw);
+        if (!res.ok) {
+                    const errText = await res.text();
+                    document.getElementById("response").innerText = "Server error: " + errText;
+                    return;
+        }
 
-        document.getElementById("response").innerText = raw;
+       const data = await res.json();
+               document.getElementById("response").innerText =
+                   `${data.message}\n\nTokens: ${data.token}`;
+
     } catch (err) {
         console.error(err);
         document.getElementById("response").innerText = "Error: " + err.message;
