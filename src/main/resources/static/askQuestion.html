@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index page</title>
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 
 <body id="body_id">
     <div id="top_bar">
         <button id="menu_button" type="button" aria-controls="menu_panel" aria-expanded="false" onclick="toggleMenu()">Menu</button>
         <h1 id="top_title">Ask Questions</h1>
-        <div id="brand_logo">TimmyGoesTripping</div>
+        <div id="brand_logo">
+            <img class="logo-mark" src="/branding/timmygoestripping-logo.svg" alt="TimmyGoesTripping logo">
+        </div>
     </div>
     <div id="menu_overlay" onclick="closeMenu()"></div>
     <aside id="menu_panel" class="menu_panel" aria-hidden="true">
         <div class="menu_title">Menu</div>
         <a href="/landing/index.html" onclick="closeMenu()">Home</a>
-        <a href="#" onclick="closeMenu()">Account Details</a>
+        <a href="/landing/portfolio.html" onclick="closeMenu()">Portfolio</a>
+        <a href="/landing/about.html" onclick="closeMenu()">About</a>
+        <a href="/landing/contact.html" onclick="closeMenu()">Contact</a>
     </aside>
-
-
+    
     <div id="response"></div>
-
 
     <div id="ask_bar">
     <input id="question" placeholder="ask any question from OpenAI"/>

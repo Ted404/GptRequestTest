@@ -123,10 +123,19 @@ button:hover {
 
 #brand_logo {
     justify-self: end;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
+    display: inline-flex;
+    align-items: center;
+    background: #f7ecd8;
+    border: 1px solid #caa26d;
+    border-radius: 12px;
+    padding: 4px 9px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.45) inset, 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+#brand_logo .logo-mark {
+    display: block;
+    width: auto;
+    height: 46px;
 }
 
 #top_title {
@@ -197,4 +206,34 @@ button:hover {
     padding: 15px 16px;
     gap: 10px;
     box-sizing: border-box;
+}
+
+@media (max-width: 760px) {
+    #top_bar {
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+        padding: 10px 12px;
+    }
+
+    #top_title {
+        display: none;
+    }
+
+    #brand_logo {
+        justify-self: end;
+        padding: 3px 7px;
+    }
+
+    #brand_logo .logo-mark {
+        height: 34px;
+    }
+
+    #ask_bar {
+        flex-wrap: wrap;
+        justify-content: stretch;
+    }
+
+    input {
+        width: 100%;
+    }
 }

@@ -1,0 +1,22 @@
+<svg width="980" height="260" viewBox="0 0 980 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">TimmyGoesTripping logo</title>
+  <desc id="desc">Handwritten black logo with yellow accent inspired by artistic travel mark style</desc>
+
+  <circle cx="655" cy="106" r="33" fill="#f2b400"/>
+
+  <g fill="#111111" font-weight="700">
+    <text x="258" y="66" font-size="42" font-family="Brush Script MT, Lucida Handwriting, cursive" transform="rotate(-4 258 66)">le</text>
+    <text x="208" y="112" font-size="26" font-family="Brush Script MT, Lucida Handwriting, cursive" transform="rotate(-8 208 112)">de</text>
+
+    <text x="140" y="154" font-size="112" letter-spacing="-1" font-family="Papyrus, Marker Felt, Brush Script MT, cursive" transform="rotate(-6 140 154)">Timmy</text>
+    <text x="116" y="216" font-size="98" letter-spacing="-1.5" font-family="Papyrus, Marker Felt, Brush Script MT, cursive" transform="rotate(-6 116 216)">Goes</text>
+    <text x="418" y="222" font-size="70" letter-spacing="-0.8" font-family="Papyrus, Marker Felt, Brush Script MT, cursive" transform="rotate(-8 418 222)">Tripping</text>
+  </g>
+
+  <g fill="none" stroke="#111111" stroke-width="4.8" stroke-linecap="round">
+    <path d="M516 92 C530 78,552 78,566 92 C552 106,530 106,516 92Z"/>
+    <circle cx="541" cy="92" r="4.2" fill="#111111" stroke="none"/>
+    <path d="M608 68 C616 56,628 55,639 64" />
+    <path d="M606 78 C618 86,632 88,646 82" />
+  </g>
+</svg>

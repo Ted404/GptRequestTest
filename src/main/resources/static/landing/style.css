@@ -39,10 +39,23 @@ body {
 }
 
 .logo {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 700;
-    letter-spacing: 0.4px;
-    font-size: 26px;
+    display: inline-flex;
+    align-items: center;
+    background: rgba(247, 236, 216, 0.66);
+    border: 1px solid #caa26d;
+    border-radius: 12px;
+    padding: 5px 10px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.42) inset, 0 5px 12px rgba(122, 62, 31, 0.12);
+}
+
+.logo-link {
+    display: inline-flex;
+}
+
+.logo-mark {
+    display: block;
+    width: auto;
+    height: 52px;
 }
 
 .nav {
@@ -55,6 +68,22 @@ body {
 .nav a {
     color: var(--ink);
     text-decoration: none;
+    padding: 7px 12px 8px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: all 140ms ease;
+}
+
+.nav a:hover {
+    background: rgba(122, 62, 31, 0.08);
+    border-color: rgba(122, 62, 31, 0.35);
+}
+
+.nav a.active {
+    background: #1c1c1c;
+    color: #ffffff;
+    border-color: #1c1c1c;
+    box-shadow: 0 2px 0 0 #f0b735;
 }
 
 .hero {
@@ -351,6 +380,14 @@ body {
         flex-direction: column;
         gap: 10px;
         align-items: flex-start;
+    }
+
+    .logo {
+        padding: 3px 7px;
+    }
+
+    .logo-mark {
+        height: 38px;
     }
 
     .nav {
