@@ -9,6 +9,11 @@ body{
     font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+body.light {
+    background-color: #f2f4f8;
+    color: #1e2430;
+}
+
 input {
     width: 500px;
     padding: 10px 12px;
@@ -47,6 +52,11 @@ button:hover {
     border-bottom: 1px solid #3a3b47;
 }
 
+body.light #top_bar {
+    background: #ffffff;
+    border-bottom-color: #d9dfe8;
+}
+
 #menu_button {
     cursor: pointer;
     background: #40414f;
@@ -60,6 +70,16 @@ button:hover {
 
 #menu_button:hover {
     background: #4a4b59;
+}
+
+body.light #menu_button {
+    background: #eef1f6;
+    color: #1e2430;
+    border-color: #c7cfdd;
+}
+
+body.light #menu_button:hover {
+    background: #e4e9f2;
 }
 
 #menu_overlay {
@@ -96,6 +116,11 @@ button:hover {
     pointer-events: none;
 }
 
+body.light #menu_panel {
+    background: #ffffff;
+    border-right-color: #d9dfe8;
+}
+
 #menu_panel.open {
     transform: translateX(0);
     pointer-events: auto;
@@ -111,6 +136,11 @@ button:hover {
     margin-bottom: 8px;
 }
 
+body.light .menu_title {
+    color: #1e2430;
+    border-bottom-color: #d9dfe8;
+}
+
 .menu_panel a {
     color: #ececf1;
     text-decoration: none;
@@ -121,8 +151,67 @@ button:hover {
     background: #2a2b32;
 }
 
-#brand_logo {
+body.light .menu_panel a {
+    color: #1e2430;
+}
+
+body.light .menu_panel a:hover {
+    background: #eef1f6;
+}
+
+.menu-theme-wrap {
+    margin-top: auto;
+    padding: 14px 0 6px;
+    display: flex;
+    justify-content: center;
+}
+
+#top_right {
     justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-toggle {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    border: 1px solid #6b7085;
+    background: #2a2d3a;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.theme-toggle:hover {
+    background: #35394a;
+}
+
+.theme-toggle-icon {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #f2b400;
+    box-shadow: -5px 0 0 0 #2a2d3a;
+}
+
+body.light .theme-toggle {
+    background: #edf1f7;
+    border-color: #c6cfdd;
+}
+
+body.light .theme-toggle:hover {
+    background: #e1e8f3;
+}
+
+body.light .theme-toggle-icon {
+    background: #f2b400;
+    box-shadow: none;
+}
+
+#brand_logo {
     display: inline-flex;
     align-items: center;
     padding: 0;
@@ -156,6 +245,10 @@ button:hover {
     box-sizing: border-box;
 }
 
+body.light #response {
+    color: #1e2430;
+}
+
 .message {
     width: fit-content;
     max-width: min(760px, 80%);
@@ -178,6 +271,16 @@ button:hover {
     margin-right: auto;
     background: #444654;
     color: #ececf1;
+}
+
+body.light .message.user {
+    background: #2b8a78;
+    color: #effffb;
+}
+
+body.light .message.assistant {
+    background: #e8edf5;
+    color: #1e2430;
 }
 
 .message.error {
@@ -204,6 +307,26 @@ button:hover {
     box-sizing: border-box;
 }
 
+body.light input {
+    background: #ffffff;
+    color: #1e2430;
+    border-color: #c8d0de;
+}
+
+body.light input::placeholder {
+    color: #7f8a9e;
+}
+
+body.light button {
+    background: #eef1f6;
+    color: #1e2430;
+    border-color: #c8d0de;
+}
+
+body.light button:hover {
+    background: #e3e9f2;
+}
+
 @media (max-width: 760px) {
     #top_bar {
         grid-template-columns: auto 1fr;
@@ -216,7 +339,6 @@ button:hover {
     }
 
     #brand_logo {
-        justify-self: end;
         padding: 0;
     }
 

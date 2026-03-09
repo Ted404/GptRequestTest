@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index page</title>
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=6">
 </head>
 
-<body id="body_id">
+<body id="body_id" data-default-theme="dark">
     <div id="top_bar">
         <button id="menu_button" type="button" aria-controls="menu_panel" aria-expanded="false" onclick="toggleMenu()">Menu</button>
         <h1 id="top_title">Ask Questions</h1>
-        <div id="brand_logo">
-            <img class="logo-mark" src="/branding/timmygoestripping-logo-white.svg" alt="TimmyGoesTripping logo">
+        <div id="top_right">
+            <div id="brand_logo">
+                <img class="logo-mark" src="/branding/timmygoestripping-logo.svg" data-logo-light="/branding/timmygoestripping-logo.svg" data-logo-dark="/branding/timmygoestripping-logo-white.svg" alt="TimmyGoesTripping logo">
+            </div>
         </div>
     </div>
     <div id="menu_overlay" onclick="closeMenu()"></div>
@@ -22,6 +24,11 @@
         <a href="/landing/portfolio.html" onclick="closeMenu()">Portfolio</a>
         <a href="/landing/about.html" onclick="closeMenu()">About</a>
         <a href="/landing/contact.html" onclick="closeMenu()">Contact</a>
+        <div class="menu-theme-wrap">
+            <button id="theme_toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" onclick="toggleTheme()">
+                <span class="theme-toggle-icon" aria-hidden="true"></span>
+            </button>
+        </div>
     </aside>
     
     <div id="response"></div>
@@ -31,6 +38,6 @@
     <button onclick="ask()">send</button>
     <button onclick="clearChat()">clear</button>
     </div>
-<script src="script.js?v=4"></script>
+<script src="script.js?v=5"></script>
 </body>
 </html>

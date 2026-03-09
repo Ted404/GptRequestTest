@@ -1,4 +1,4 @@
-package gptapi.Controller;
+package gptapi.controller;
 
 import gptapi.service.OpenAiService;
 import gptapi.dto.SimpleResponse;

@@ -6,12 +6,12 @@
     <title>TimmyGoesTripping - Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-default-theme="light">
     <main class="page">
         <header class="topbar">
             <div class="logo">
                 <a class="logo-link" href="/landing/index.html">
-                    <img class="logo-mark" src="/branding/timmygoestripping-logo.svg" alt="TimmyGoesTripping logo">
+                    <img class="logo-mark" src="/branding/timmygoestripping-logo.svg" data-logo-light="/branding/timmygoestripping-logo.svg" data-logo-dark="/branding/timmygoestripping-logo-white.svg" alt="TimmyGoesTripping logo">
                 </a>
             </div>
             <nav class="nav">
@@ -19,6 +19,9 @@
                 <a href="/landing/portfolio.html">Portfolio</a>
                 <a href="/landing/about.html">About</a>
                 <a href="/landing/contact.html">Contact</a>
+                <button id="theme_toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" onclick="toggleTheme()">
+                    <span class="theme-toggle-icon" aria-hidden="true"></span>
+                </button>
             </nav>
         </header>
 
@@ -46,5 +49,6 @@
         <div class="star star-right"></div>
         <div class="dot"></div>
     </main>
+    <script src="theme.js?v=1"></script>
 </body>
 </html>
