@@ -4,24 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 
 <body id="body_id">
     <div id="top_bar">
-        <details id="menu_dropdown">
-            <summary>Menu</summary>
-            <div class="menu_panel">
-                <a href="#">Home</a>
-                <a href="#">Account Details</a>
-            </div>
-        </details>
+        <button id="menu_button" type="button" aria-controls="menu_panel" aria-expanded="false" onclick="toggleMenu()">Menu</button>
+        <h1 id="top_title">Ask Questions</h1>
         <div id="brand_logo">TimmyGoesTripping</div>
     </div>
-
-    <div id="header_element">
-    <h1>Ask Questions</h1>
-    </div>
+    <div id="menu_overlay" onclick="closeMenu()"></div>
+    <aside id="menu_panel" class="menu_panel" aria-hidden="true">
+        <div class="menu_title">Menu</div>
+        <a href="/landing/index.html" onclick="closeMenu()">Home</a>
+        <a href="#" onclick="closeMenu()">Account Details</a>
+    </aside>
 
 
     <div id="response"></div>
@@ -32,6 +29,6 @@
     <button onclick="ask()">send</button>
     <button onclick="clearChat()">clear</button>
     </div>
-<script src="script.js"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>

@@ -1,6 +1,9 @@
 const STORAGE_KEY = "chat_history_v1";
 const questionInput = document.getElementById("question");
 const responseContainer = document.getElementById("response");
+const menuButton = document.getElementById("menu_button");
+const menuPanel = document.getElementById("menu_panel");
+const menuOverlay = document.getElementById("menu_overlay");
 
 let messages = loadHistory();
 renderHistory();
@@ -10,6 +13,37 @@ questionInput.addEventListener("keydown", (event) => {
         ask();
     }
 });
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        closeMenu();
+    }
+});
+
+function openMenu() {
+    if (!menuButton || !menuPanel || !menuOverlay) return;
+    menuPanel.classList.add("open");
+    menuOverlay.classList.add("open");
+    menuButton.setAttribute("aria-expanded", "true");
+    menuPanel.setAttribute("aria-hidden", "false");
+}
+
+function closeMenu() {
+    if (!menuButton || !menuPanel || !menuOverlay) return;
+    menuPanel.classList.remove("open");
+    menuOverlay.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuPanel.setAttribute("aria-hidden", "true");
+}
+
+function toggleMenu() {
+    if (!menuPanel) return;
+    if (menuPanel.classList.contains("open")) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
+}
 
 function loadHistory() {
     try {
