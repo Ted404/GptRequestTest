@@ -204,6 +204,123 @@ body {
     text-decoration: underline;
 }
 
+.contact {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 56px 24px 84px;
+}
+
+.contact h1 {
+    margin: 0 0 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 6vw, 66px);
+    line-height: 0.95;
+}
+
+.contact-intro {
+    margin: 0 0 26px;
+    font-size: 20px;
+    max-width: 760px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 14px;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--line);
+    padding: 18px 20px;
+}
+
+.contact-card h2 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.contact-card p {
+    margin: 0 0 6px;
+    font-size: 19px;
+    line-height: 1.45;
+}
+
+.contact-card a {
+    color: var(--ink);
+    text-decoration: underline;
+}
+
+.about {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 52px 30px 80px;
+    display: grid;
+    grid-template-columns: minmax(320px, 1fr) minmax(280px, 440px);
+    gap: 34px;
+    align-items: start;
+}
+
+.about-kicker {
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.about h1 {
+    margin: 0 0 16px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1;
+}
+
+.about-copy p {
+    margin: 0 0 14px;
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 720px;
+}
+
+.about-tags {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.about-tags span {
+    border: 1px solid var(--ink);
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.about-frame {
+    background: #8d5635;
+    border: 1px solid #6f3e21;
+    padding: 12px;
+}
+
+.about-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 560px;
+    object-fit: cover;
+}
+
+.about-note {
+    margin-top: 12px;
+    border: 1px solid var(--ink);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px 12px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
 @media (max-width: 1100px) {
     .hero {
         grid-template-columns: 1fr;
@@ -217,6 +334,14 @@ body {
     .desc {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
 }
 
