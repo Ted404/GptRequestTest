@@ -16,15 +16,9 @@ const menuOverlay = document.getElementById("menu_overlay");
 const rainBg = document.querySelector(".rain-bg");
 const citySuggestionsEl = document.getElementById("city_suggestions");
 
-const CITY_SUGGESTIONS = [
-    "Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Fujairah", "Doha", "Riyadh",
-    "Jeddah", "Kuwait City", "Muscat", "Bahrain", "Manama", "Istanbul", "London", "Paris",
-    "Berlin", "Amsterdam", "Rome", "Madrid", "Lisbon", "Athens", "New York", "Los Angeles",
-    "Chicago", "Seattle", "San Francisco", "Toronto", "Vancouver", "Mexico City", "Sao Paulo",
-    "Buenos Aires", "Tokyo", "Seoul", "Singapore", "Bangkok", "Kuala Lumpur", "Jakarta",
-    "Manila", "Cebu", "Davao", "Hong Kong", "Sydney", "Melbourne", "Auckland", "Mumbai",
-    "Delhi", "Bengaluru", "Hyderabad", "Chennai", "Karachi", "Lahore", "Cairo", "Cape Town"
-];
+const CITY_SUGGESTIONS = Array.isArray(window.WORLD_CITY_SUGGESTIONS)
+    ? [...new Set(window.WORLD_CITY_SUGGESTIONS)]
+    : ["Dubai", "Cebu", "Manila", "London", "New York"];
 
 const WEATHER_BACKGROUNDS = {
     clear: "https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1400&w=2400",
