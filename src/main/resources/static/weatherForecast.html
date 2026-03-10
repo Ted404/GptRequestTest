@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="weather.css?v=2">
+</head>
+<body>
+    <div class="rain-bg"></div>
+    <div class="page">
+        <header class="topbar">
+            <button id="menu_button" type="button" aria-controls="menu_panel" aria-expanded="false" onclick="toggleMenu()">Menu</button>
+            <div class="brand">
+                <img class="logo-mark" src="/branding/timmygoestripping-logo-white.svg" alt="TimmyGoesTripping logo">
+            </div>
+        </header>
+
+        <div id="menu_overlay" onclick="closeMenu()"></div>
+        <aside id="menu_panel" class="menu_panel" aria-hidden="true">
+            <div class="menu_title">Menu</div>
+            <a href="/landing/index.html" onclick="closeMenu()">Home</a>
+            <a href="/landing/portfolio.html" onclick="closeMenu()">Portfolio</a>
+            <a href="/landing/about.html" onclick="closeMenu()">About</a>
+            <a href="/landing/contact.html" onclick="closeMenu()">Contact</a>
+        </aside>
+
+        <main class="content">
+            <section class="left-panel">
+                <form id="city_form" class="search-row">
+                    <div class="city-picker">
+                        <input id="city_input" type="text" placeholder="Enter city (e.g., Dubai)" value="Dubai" autocomplete="off">
+                        <div id="city_suggestions" class="city-suggestions" hidden></div>
+                    </div>
+                    <button type="submit">Search</button>
+                </form>
+
+                <div class="current-weather">
+                    <div class="temp-row">
+                        <span id="temperature" class="temperature">--</span>
+                        <img id="icon" class="icon" alt="weather icon">
+                    </div>
+                    <div id="city_name" class="city">--</div>
+                    <div id="summary" class="summary">--</div>
+                </div>
+            </section>
+
+            <section class="right-panel glass">
+                <h2>Current Weather Details</h2>
+                <div class="detail-grid">
+                    <div class="detail">
+                        <span class="label">Main</span>
+                        <span id="main_value" class="value">--</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">Description</span>
+                        <span id="description_value" class="value">--</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">Feels Like</span>
+                        <span id="feels_value" class="value">--</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">Humidity</span>
+                        <span id="humidity_value" class="value">--</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">Wind Speed</span>
+                        <span id="wind_value" class="value">--</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">
+                            Icon Code
+                            <span class="info-tip" tabindex="0" aria-label="Icon code info">
+                                i
+                                <span class="tooltip-text">
+                                    OpenWeather icon code for the current condition (for example: 10d = rainy day).
+                                </span>
+                            </span>
+                        </span>
+                        <span id="icon_value" class="value">--</span>
+                    </div>
+                </div>
+                <div id="status" class="status"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="weather.js?v=2"></script>
+</body>
+</html>
